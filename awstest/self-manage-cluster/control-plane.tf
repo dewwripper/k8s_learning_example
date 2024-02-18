@@ -66,6 +66,7 @@ module "control_plane" {
       contains(local.include_components, "ebs-csi-driver") ? templatefile("../external/script/driver/ebs-csi-driver.sh", {}) : "",
       contains(local.include_components, "argocd") ? templatefile("../external/script/argocd.sh", {}) : "",
       contains(local.include_components, "argocd-cli") ? templatefile("../external/script/argocd-cli.sh", {}) : "",
+      contains(local.include_components, "falco") ? templatefile("../external/script/falco.sh", {}) : "",
     ]
   })
 

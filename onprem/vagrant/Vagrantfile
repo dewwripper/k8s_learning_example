@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     config.vm.define node[:host] do |config|
       config.vm.box = node[:box]
       # config.vm.network "private_network", type: "dhcp"
-      config.vm.network "private_network", ip: node[:ip], :netmask => "255.255.255.0"
+      # config.vm.network "private_network", ip: node[:ip], :netmask => "255.255.255.0"
       config.vm.hostname = "#{node[:host]}"
       config.vm.provider "vmware_desktop" do |v|
         v.gui = node[:gui]
@@ -25,10 +25,10 @@ Vagrant.configure("2") do |config|
       end
       if node[:host] == "cp" then
         config.vm.provision "shell", path: "../scripts/common.sh"
-        config.vm.provision "shell", path: "../scripts/control-plane.sh"
+        # config.vm.provision "shell", path: "../scripts/control-plane.sh"
       else
         config.vm.provision "shell", path: "../scripts/common.sh"
-        config.vm.provision "shell", path: "../scripts/worker.sh"
+        # config.vm.provision "shell", path: "../scripts/worker.sh"
       end
       
     end
