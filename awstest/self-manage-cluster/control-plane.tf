@@ -207,8 +207,8 @@ resource "aws_iam_role_policy_attachment" "EBSCSIDriver-role-policy-attach" {
   policy_arn = data.aws_iam_policy.EBSCSIDriver.arn
 }
 
-resource "aws_ssm_parameter" "join_k8s_cluster_cmd" {
-  name  = "join_command"
-  type  = "String"
-  value = "NULL"
-}
+# resource "aws_ssm_parameter" "join_k8s_cluster_cmd" {
+#   name  = "join_command"
+#   type  = "String"
+#   value = "NULL"
+# }
