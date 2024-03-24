@@ -10,3 +10,7 @@ sudo apt install -y clang llvm
 # You can install also the dialog package if you want it
 sudo apt install -y dialog
 sudo apt-get install -y falco
+
+sudo falcoctl driver config --type ebpf
+sudo falcoctl driver install
+sudo systemctl start falco-bpf.service
